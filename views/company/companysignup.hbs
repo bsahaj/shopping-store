@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="signUpBox">
+    <h1> Company Sign Up</h1>
+    <p>TODO: have to validate credentials</p>
+
+    {{#if messages}}
+      <div class="alert alert-danger">
+        {{messages}}
+      </div>
+    {{/if}}
+
+    <form action="/company/companysignup" method="POST">
+      <div class="form-group">
+        <label for="companyName">Comapany Name:</label>
+        <input type="text" id="companyName" name="companyName" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="email">Comapany Email:</label>
+        <input type="text" id="email" name="email" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="form-control">
+      </div>
+      <hr>
+      <div class="form-group">
+        <label for="companyCode">Company Code:</label>
+        <input type="text" id="companyCode" name="companyCode" class="form-control">
+      </div>
+      <hr>
+      <h4>Company Address: </h4>
+      <div class="form-group">
+        <label for="street">Street:</label>
+        <input type="text" id="street" name="street" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="zip">Zip Code:</label>
+        <input type="text" id="zip" name="zip" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" class="form-control">
+      </div>
+      <hr>
+      <input type="hidden" name="_csrf" value="{{csrfToken}}">
+      <button class="btn btn-outline-primary" id="signUpButton" type="submit">Sign Up</button>
+    </form>
+    <hr>
+    <label for="country">Company not registered?</label>
+    <a href="#">Register Company</a>
+  </div>
+  </div>
+</div>

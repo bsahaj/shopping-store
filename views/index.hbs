@@ -1,0 +1,121 @@
+<!-- rows -->
+{{# each products}}
+<div class="row">
+  <!-- columns -->
+  {{# each this}}
+  <div class=" col-sm-4 col-md-4">
+    <div class="card mb-4 shadow-sm">
+      <div class="card">
+      <img class="card-img-top" src="{{this.imagePath}}" alt="Card image cap">
+      <div class="card-body">
+        <h3>{{this.title}}</h3>
+        <h5>Manufacturer: {{this.make}}</h5>
+        <p class="card-text">{{this.despriction}}</p>
+          <div>
+            <div  class="price-text float-left">${{this.price}}</div>
+              <a href="/cart/add-to-cart/{{this._id}}" class="btn btn-outline-success float-right" role="button">Add to Cart</a>
+          </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{/each}}
+<!-- row 1-->
+<!-- <div class="row">
+  <div class=" col-sm-4 col-md-4">
+    <div class="card mb-4 shadow-sm">
+      <img class="card-img-top" src="https://www.cstatic-images.com/car-pictures/main/USC50FOC051B021001.png" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+          <div>
+            <div  class="price-text float-left">$40,000</div>
+              <button class="btn btn-outline-success float-right">Add</button>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-sm-1 col-md-4">
+    <div class="card mb-4 shadow-sm">
+      <img class="card-img-top" src="https://www.cstatic-images.com/car-pictures/main/USC50FOC051B021001.png" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+          <div>
+            <div  class="price-text float-left">$40</div>
+              <button class="btn btn-outline-success float-right">Add</button>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-sm-1 col-md-4">
+    <div class="card mb-4 shadow-sm">
+      <img class="card-img-top" src="https://www.cstatic-images.com/car-pictures/main/USC50FOC051B021001.png" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+          <div>
+            <div  class="price-text float-left">$40</div>
+              <button class="btn btn-outline-success float-right">Add</button>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+ row 2
+<div class="row">
+  <div class=" col-sm-4 col-md-4">
+    <div class="card mb-4 shadow-sm">
+      <img class="card-img-top" src="https://www.cstatic-images.com/car-pictures/main/USC50FOC051B021001.png" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+          <div>
+            <div  class="price-text float-left">$40,000</div>
+              <button class="btn btn-outline-success float-right">Add</button>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-sm-1 col-md-4">
+    <div class="card mb-4 shadow-sm">
+      <img class="card-img-top" src="https://www.cstatic-images.com/car-pictures/main/USC50FOC051B021001.png" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+          <div>
+            <div  class="price-text float-left">$40</div>
+              <button class="btn btn-outline-success float-right">Add</button>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-sm-1 col-md-4">
+    <div class="card mb-4 shadow-sm">
+      <img class="card-img-top" src="https://www.cstatic-images.com/car-pictures/main/USC50FOC051B021001.png" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+          <div>
+            <div  class="price-text float-left">$40</div>
+              <button class="btn btn-outline-success float-right">Add</button>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+</div> -->

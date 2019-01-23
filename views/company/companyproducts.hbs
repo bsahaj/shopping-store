@@ -1,0 +1,35 @@
+<h1>Company Products</h1>
+<div class="companyProducts">
+
+  <form class="" action="/products" method="POST">
+    <div class="card card-products my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Add Products:</h5>
+          {{# if messages}}
+          <div class="alert alert-danger" role="alert">
+            {{this.messages}}
+          </div>
+          {{/if}}
+          <form class="form-profile">
+            <div class="form-label-group">
+              <input type="text" id="productImagePath" name="productImagePath" class="form-control" placeholder="Image Path" required autofocus>
+              <label for="productImagePath">Image Path URL</label>
+            </div>
+            <div class="form-label-group">
+              <input type="text" id="productName" name="productName" class="form-control" placeholder="Product Name" required autofocus>
+              <label for="productName">Product Name</label>
+            </div>
+            <div class="form-label-group">
+              <input type="text" id="productPrice" name="productPrice" class="form-control" placeholder="Product Price" required autofocus>
+              <label for="productPrice">Product Price</label>
+            </div>
+            <div class="form-label-group">
+              <textarea type="text" id="productDis" name="productDis" class="form-control" placeholder="Product Discription:" required autofocus></textarea>
+            </div>
+            <button class="btn btn-lg btn-outline-secondary btn-block text-uppercase" type="submit">Add Product</button>
+          </form>
+        </div>
+    </div>
+  </form>
+
+</div>

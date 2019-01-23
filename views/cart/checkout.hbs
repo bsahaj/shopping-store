@@ -1,0 +1,46 @@
+<div class="row">
+  <div class=" col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+
+    <h1>Order Review:</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Quantity</th>
+          <th scope="col">Product Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          {{# if products}}
+            {{# each products}}
+              <th scope="row">{{ this.qty }}</th>
+              <td>{{this.item.title}}</td>
+        </tr>
+        {{/each}}
+        {{/if}}
+      </tbody>
+    </table>
+
+    <hr>
+    <h5>Total Cost: ${{ price }}</h5>
+    <hr>
+    <h6>Shipping Address: {{address.street}}, {{address.city}}, {{ address.zip}}, {{ address.country}}</h6>
+    <hr>
+
+    <form action="/cart/placeOrder" method="POST">
+      <div class="card-body">
+        <h5 class="card-title text-center">Name for the order</h5>
+        <div class="form-label-group">
+          <input type="text" id="name" name="name" class="form-control" placeholder="Please enter full name" required autofocus>
+          <label for="name">Please enter full name</label>
+        </div>
+      </div>
+      <hr>
+
+      <button class="btn btn-success" type="submit">Place Order</button>
+      <a href="/cart/shopping-cart" class="btn btn-outline-primary" role="button">Back To Cart</a>
+    </form>
+
+  </div>
+</div>

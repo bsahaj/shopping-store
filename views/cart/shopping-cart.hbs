@@ -1,0 +1,58 @@
+{{# if products}}
+  <div class="row">
+    <div class=" col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+      <h1>Shopping Cart:</h1>
+      <ul class="list-group">
+        {{# each products}}
+          <li class="list-group-item">
+            <strong>{{this.item.title}}</strong>
+            <span class="badge badge-dark">{{ this.qty }}</span>
+            <span class="label label-success">${{this.price}}</span>
+
+            <!-- <a class="dropdown-item" href="/cart/reduce/{{this.item._id}}">Reduce by 1</a>
+                <a class="dropdown-item" href="/cart/addOne/{{this.item._id}}">Add by 1</a>
+                <a class="dropdown-item" href="/cart/remove/{{this.item._id}}">Remove All</a> -->
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <a role="button" class="btn btn-sm" href="/cart/reduce/{{this.item._id}}"><i class="fa fa-minus"></i></a>
+              </div>
+              <input id="qtyId" value="{{this.qty}}" disabled>
+
+              <div class="input-group-prepend">
+                <a role="button" class="btn btn-sm" href="/cart/addOne/{{this.item._id}}"><i class="fa fa-plus"></i></a>
+              </div>
+
+            </div>
+            <button class="btn btn-outline">Remove All</button>
+          </li>
+          {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class=" col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+      <strong>Total: ${{ totalPrice }}</strong>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <form action="/cart/checkout" method="GET">
+      <div class=" col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+        <button class="btn btn-outline-success" type="submit">Checkout</button>
+      </div>
+    </form>
+    <form action="/cart/continue-shopping" method="GET">
+      <p>have to map the button</p>
+        <button class="btn btn-outline-primary" type="submit">Continue Shopping</button>
+    </form>
+  </div>
+
+  {{else}}
+    <div class="row">
+      <div class=" col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+        <h2>No items in cart</h2>
+      </div>
+    </div>
+    {{/if}}

@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-8">
+    <h1>Profile</h1>
+    <hr>
+    <p><strong>Email: </strong>{{email}}</p>
+    <p><strong>Shipping Address: </strong>{{address.street}}, {{address.city}}, {{address.zip}}, {{address.country}}</p>
+    <hr>
+    <h6>Recent Orders: </h6>
+    <hr>
+    {{# each orders}}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{this.dateAndTime}}</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Quantity</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Product Price</th>
+                <th scope="col">Shipping Name</th>
+              </tr>
+            </thead>
+            {{#each this.items}}
+              <tbody>
+                <tr>
+                  <th scope="row">{{ this.qty }}</th>
+                  <td>{{this.item.title}}</td>
+                  <td>${{this.item.price}}</td>
+            {{/each}}
+                  <td>{{this.name}}</td>
+                </tr>
+              </tbody>
+          </table>
+        </div>
+        <table>
+          <tr>
+            <th scope="col">Total Price: </th>
+            <th scope="col">${{this.cart.totalPrice}}</th>
+          </tr>
+        </table>
+      </div>
+      {{/each}}
+
+  </div>
+</div>
